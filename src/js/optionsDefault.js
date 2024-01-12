@@ -16,7 +16,7 @@ export const defaultOptions = {
 
     licenseKey: '',
     credits: {
-        "enabled": true,
+        "enabled": false,
         "label": 'Made with fullPage.js',
         "position": 'right'
     },

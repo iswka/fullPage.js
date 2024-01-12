@@ -10,8 +10,6 @@ import './menu/index.js';
 import './nav/index.js';
 import './scroll/index.js';
 import './slides/index.js';
-import './mixed/waterMark.js';
-import './mixed/index.min.js';
 
 import * as utils from './common/utils.js';
 import { setOptions, setOption, getOptions } from './common/options.js';
@@ -19,7 +17,6 @@ import { setContainer, getContainer } from './common/options.js';
 import { init } from './instance.js';
 import { FP, win } from './common/constants.js';
 import { $html, setCache } from './common/cache.js';
-import { displayWarnings } from './console.js';
 import { ENABLED } from './common/selectors.js';
 import { EventEmitter } from './common/eventEmitter.js';
 import { events } from './common/events.js';
@@ -28,7 +25,7 @@ export default function fullpage(containerSelector, options) {
     setCache();
 
     //only once my friend!
-    if(utils.hasClass($html, ENABLED)){ displayWarnings(); return; }
+    if(utils.hasClass($html, ENABLED)){ return; }
 
     setOption('touchWrapper', typeof containerSelector === 'string' ? utils.$(containerSelector)[0] : containerSelector);
 
@@ -38,8 +35,6 @@ export default function fullpage(containerSelector, options) {
     setContainer(typeof containerSelector === 'string' ? utils.$(containerSelector)[0] : containerSelector);
 
     EventEmitter.emit(events.onInitialise);
-
-    displayWarnings();
 
     setAPI();
 

@@ -2,17 +2,7 @@ import { terser } from "rollup-plugin-terser";
 import resolve from "@rollup/plugin-node-resolve";
 import babel from "@rollup/plugin-babel";
 
-const licenseContent = `/*!
-* fullPage 4.0.20
-* https://github.com/alvarotrigo/fullPage.js
-*
-* @license GPLv3 for open source use only
-* or Fullpage Commercial License for commercial use
-* http://alvarotrigo.com/fullPage/pricing/
-*
-* Copyright (C) 2018 http://alvarotrigo.com/fullPage - A project by Alvaro Trigo
-*/
-`;
+const licenseContent = ``;
 
 const terserOptions = {
     compress: {
